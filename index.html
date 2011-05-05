@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Pure Javascript Powered Blog</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://purejsblog.cuoluo.net/purejsblog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+/* CONFIG */
+var blogTitle = 'Pure Javascript Powered Blog'; // Blog title
+var formKey = 'dG1PNE1QYXNISWxaYUZJMnVoeXRrR3c6MQ'; // your posts form key
+var ssKey = '0AvAcQwpJKwspdG1PNE1QYXNISWxaYUZJMnVoeXRrR3c'; // your google spreadsheets key
+var maxPostsNum = 5; // Blog pages show at most how many posts
+var aboutPageId = 3; // about page's id
+var contentToHtml = true; // if false then set content to text
+
+var titleFieldName = 'entry.0.single';
+var contentFieldName = 'entry.2.single';
+var passwordFieldName = 'entry.1.single';
+var postidFieldName = 'entry.3.single';
+</script>
+
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div id="wrap">
+
+<div id="header">
+	<h1><a href="http://purejsblog.cuoluo.net/index.html" >Pure Javascript Powered Blog</a></h1>
+	<ul id="navigation">
+		<li><a id="homelink" href="/">Home</a></li>
+		<li><a id="aboutlink" href="?p=2">About</a></li>
+	</ul>
+	<div id="topbar">
+		<span id="editonoff" class="off hidden">make posts editable</span>
+		<span id="addnewpost" class="hidden leftline"><a href="?action=new">add new post</a></span>
+		<span id="helplink"><a href="http://purejsblog.cuoluo.net/index.html?p=4">Help</a></span>
+	</div>
+</div>
+
+<div id="articles">
+	<div id="articleloading"><span id="loadingmsg">Loading</span><span id="loadingdots">...</span></div>
+</div>
+
+<div id="formbox" class="hidden">
+<form target="hiddenframe" action="" method="POST" id="ss-form">
+	<p class="msg hidden">Your post has been sent. <a href="">View post</a></p>
+	<h2>Add New Post</h2>
+	<h3>Title</h3>
+	<input type="text" id="titleinput" /> 
+	<h3>Content</h3>
+	<textarea id="contenttextarea" cols="75" rows="8"></textarea>
+	<h3>Admin password <span class="ss-required-asterisk">*</span></h3>
+	<input type="password" id="pwdinput" value=""/><br/><br/><br/>
+	<input type="hidden" name="pageNumber" value="0">
+	<input type="hidden" id="postIdInput" value="">
+	<input type="submit" value="Publish" name="submit" id="sbtinput" />
+	<a href="" class="cancel">Cancel</a><br/><br/><br/>
+</form>
+<iframe name="hiddenframe" id="hiddenframe" style="display:none" >Loading...</iframe>
+</div>
+<div id="pagination" class="pagination hidden"></div>
+<div id="footer"></div>
+</div>
+<script type="text/javascript" src="http://purejsblog.cuoluo.net/purejsblog.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-632151-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
