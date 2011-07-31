@@ -1,5 +1,5 @@
 function checkPassword(pwd){
-  if (pwd === 'yourpassword')
+  if (pwd == 'yourpassword')
     return true;
   else
     return false;
